@@ -1,0 +1,25 @@
+@import "./vars.scss";
+
+@mixin button-style($width: 100px) {
+  width: $width;
+  background-color: $yellow-color;
+  border-radius: 80px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  padding-block: 8px;
+  cursor: pointer;
+  transition: all $transition-duration;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    background-color: $yellow-hover;
+  }
+
+  &:disabled {
+    background-color: #B4B4B4;
+    color: white;
+    cursor:not-allowed;
+  }
+}

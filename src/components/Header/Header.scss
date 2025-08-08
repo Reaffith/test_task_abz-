@@ -1,0 +1,43 @@
+@import '../../vars.scss';
+@import '../../mixins.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    
+    background-color: #fff;
+
+    &_logo {
+        transition: all $transition-duration;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &_buttons {
+        display: flex;
+        gap: 10px;
+
+        &-button {
+            @include button-style(100px)
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 18px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 18px 10px;
+    }
+
+    .header_buttons-button {
+         @include button-style(80px)
+    }
+}

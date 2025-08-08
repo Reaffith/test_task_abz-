@@ -1,0 +1,49 @@
+@import "../../vars.scss";
+@import "../../mixins.scss";
+
+.get {
+  background-color: $background-color;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  &_header {
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  &_list {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    max-width: 1168px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_button {
+    @include button-style(120px);
+    border: none;
+    font-family: "Nunito", sans-serif;
+  }
+}
+
+@media (min-width: 1024px) {
+  .get_list {
+    grid-template-columns: repeat(3, calc((100% - (20px * 3)) / 3));
+  }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  .get_list {
+    grid-template-columns: repeat(2, calc((100% - (20px * 2)) / 2));
+  }
+}
+@media (max-width: 768px) {
+  .get_list {
+    grid-template-columns: 100%;
+  }
+}
